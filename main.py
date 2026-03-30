@@ -1,0 +1,24 @@
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from models import HealthResponse
+
+app = FastAPI(title="Neuron Notes API")
+
+# Enable CORS for all origins (restrict later)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+@app.get("/health", response_model=HealthResponse)
+def health_check():
+    return {"status": "ok", "service": "neuron-notes"}
+
+# TODO: Add your routers here when ready
+# from auth_utils import router as auth_router
+# from notes import router as notes_router
+# app.include_router(auth_router)
+# app.include_router(notes_router)
