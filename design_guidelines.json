@@ -1,0 +1,147 @@
+{
+  "theme_strategy": {
+    "primary_theme": "light",
+    "supported_modes": [
+      "light",
+      "dark"
+    ],
+    "archetype": "4 (Swiss & High-Contrast)",
+    "description": "A high-speed, intelligence-first interface. Rejects soft 'pastel productivity' in favor of crisp, functional contrast. Borrows the speed of Google Keep but elevates it with architectural typography and surgical precision. Android M3 patterns are respected but stripped of their muddy tonal backgrounds—everything is high contrast."
+  },
+  "colors": {
+    "light": {
+      "background": "#FFFFFF",
+      "surface": "#F4F4F5",
+      "surface_elevated": "#FFFFFF",
+      "primary": "#002FA7",
+      "primary_foreground": "#FFFFFF",
+      "ai_accent": "#FFD600",
+      "text_primary": "#09090B",
+      "text_secondary": "#71717A",
+      "border": "#E4E4E7",
+      "fab_gradient_start": "#002FA7",
+      "fab_gradient_end": "#001A66"
+    },
+    "dark": {
+      "background": "#000000",
+      "surface": "#09090B",
+      "surface_elevated": "#18181B",
+      "primary": "#3B82F6",
+      "primary_foreground": "#FFFFFF",
+      "ai_accent": "#FACC15",
+      "text_primary": "#FAFAFA",
+      "text_secondary": "#A1A1AA",
+      "border": "#27272A",
+      "fab_gradient_start": "#3B82F6",
+      "fab_gradient_end": "#1D4ED8"
+    }
+  },
+  "typography": {
+    "heading_font": "Cabinet Grotesk",
+    "body_font": "IBM Plex Sans",
+    "mono_font": "JetBrains Mono",
+    "scales": {
+      "h1": "text-4xl tracking-tighter leading-none font-bold",
+      "h2": "text-2xl tracking-tight leading-tight font-semibold",
+      "h3": "text-xl tracking-tight leading-snug font-medium",
+      "body": "text-base tracking-normal leading-relaxed font-normal",
+      "label": "text-xs tracking-[0.2em] uppercase font-bold text_secondary"
+    }
+  },
+  "spacing_and_layout": {
+    "base_unit": 8,
+    "screen_padding": 16,
+    "element_gap": 12,
+    "section_gap": 32,
+    "border_radius": {
+      "sm": 4,
+      "md": 8,
+      "lg": 16,
+      "full": 9999
+    },
+    "grid_strategy": "Control Room Grid variant for mobile. 1-column strict with full-width cards. Generous internal padding (p-4 or p-6) for text breathing room."
+  },
+  "components": {
+    "floating_action_button": {
+      "shape": "Large rounded square (md/lg radius) or circle, maintaining Android M3 bulk but with E1 contrast",
+      "position": "absolute, bottom-6, right-6",
+      "style": "Gradient background, massive drop shadow, crisp icon. No muddy transparencies. Essential for 1-second instant capture."
+    },
+    "note_card": {
+      "style": "Flat background (Surface color), 1px solid border (Border color). NO drop shadow by default.",
+      "padding": "p-4",
+      "border_radius": "md",
+      "active_state": "border-primary, slight lift, crisp shadow-sm"
+    },
+    "ai_tag": {
+      "style": "Pill-shaped, background: transparent, border: 1px solid primary, text: primary. Tiny uppercase font (Label scale).",
+      "icon": "Optional spark/AI icon on the left"
+    },
+    "bottom_navigation": {
+      "style": "Solid Surface Elevated background with a 1px top border. High contrast active icon. No glassmorphism on Android."
+    },
+    "search_bar": {
+      "style": "Full width, zero or subtle border radius (sm), heavy bottom border on focus. 'Google Keep level simplicity'."
+    },
+    "ai_processing_block": {
+      "style": "Use mono_font for machine-generated summaries/tasks to differentiate from human notes. Background: 10% Grey (Surface), Left border: 2px solid ai_accent."
+    }
+  },
+  "motion": {
+    "duration": "fast (150ms-250ms)",
+    "easing": "ease-out (cubic-bezier(0.16, 1, 0.3, 1))",
+    "transitions": [
+      "Transform on press (scale down 0.98)",
+      "Opacity fade on route change",
+      "Staggered entrance for list items"
+    ]
+  },
+  "assets": {
+    "icons_library": "Phosphor Icons (@phosphor-icons/react-native or vector-icons) - Duotone or Bold weight for high contrast.",
+    "images": [
+      {
+        "category": "empty_state_illustration",
+        "description": "Abstract composition for 'No Notes' or 'AI Processing' background",
+        "url": "https://images.unsplash.com/photo-1692889783742-7d99b124c402?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODl8MHwxfHNlYXJjaHwyfHxtaW5pbWFsaXN0JTIwd2hpdGUlMjBhYnN0cmFjdCUyMGdlb21ldHJ5fGVufDB8fHx8MTc3NDgwNjU2OXww&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "category": "ai_onboarding_texture",
+        "description": "Background for AI 'thinking' states",
+        "url": "https://images.pexels.com/photos/1029622/pexels-photo-1029622.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      }
+    ]
+  },
+  "screen_blueprint": {
+    "Home": {
+      "header": "Search Bar (Full width, grey surface, sticky top)",
+      "content": "List/Grid of notes. Notes vary in height based on content. No folders visible, just intelligent grouping headers (e.g., 'Recent', 'Ideas about Music').",
+      "floating_action": "Massive '+' FAB at bottom right."
+    },
+    "Note_Editor": {
+      "header": "Back button, Title input (H1, tracking-tighter).",
+      "content": "Full screen body input. AI 'Summary' & 'Tags' auto-generated block at the bottom using mono_font.",
+      "bottom_toolbar": "Formatting tools, Voice record button, Camera icon."
+    },
+    "Task_Dashboard": {
+      "header": "H1 'Actions & Tasks'",
+      "content": "List of checkboxes extracted from notes. Each task has a tiny link back to its parent note."
+    },
+    "Graph_View": {
+      "content": "Local-first node graph of connected thoughts. Nodes colored by tag. Dark background preferred for this specific screen to let connections pop."
+    }
+  },
+  "accessibility_and_testing": {
+    "contrast_strategy": "APCA contrast preferred over WCAG. No muddy greys on black. Pure white text on primary buttons.",
+    "data_testid_convention": "kebab-case, role-based (e.g. 'home-fab-create-note', 'note-editor-title-input')"
+  },
+  "instructions_to_main_agent": [
+    "IMPORTANT: You MUST use .js files for React components, NOT .tsx files.",
+    "Do NOT use generic system sans-serif for headings. Load 'Cabinet Grotesk' or use system equivalent with fontWeight: '900' and letterSpacing: -1.",
+    "Do NOT use Expo/React Native defaults blindly. Explicitly style the Navigation headers to be completely flat, with no native shadows.",
+    "The FAB must be prominently styled, using linear gradients and specific shadow properties to stand out from the grid.",
+    "For the note list, use a Masonry layout if possible, or a flat 1-column list on narrow mobile screens. Use border-width: 1 and border-color with background-color for note cards.",
+    "Ensure all interactable elements have a `data-testid` attribute based on the role.",
+    "Avoid the generic 'pastel app' look. Stick strictly to high contrast: Pitch Black, Stark White, and Signal Blue.",
+    "Implement rules-based AI fallbacks for tagging/summaries by mocking the outputs as plain text inside `JetBrains Mono` text blocks to indicate 'AI generation'."
+  ]
+}

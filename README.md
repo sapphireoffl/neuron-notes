@@ -1,2 +1,1 @@
-# neuron-notes
-A note taking app
+# Here are your Instructions
